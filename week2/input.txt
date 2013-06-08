@@ -1,0 +1,5 @@
+input.txt
+
+本文件為utf8編碼
+
+this file is encoded in utf-8
