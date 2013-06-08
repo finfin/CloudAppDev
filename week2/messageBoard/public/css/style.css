@@ -1,0 +1,43 @@
+body {
+  margin: 4em 2em;
+  font-family: Helvetica, arial, san-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+}
+
+ul.messages {
+	list-style-type: none;
+}
+
+ul.messages span {
+	margin: 0 1em;
+}
+
+ul.messages li {
+	margin-bottom: 0.5em;
+}
+ul.messages span.date {
+	color: #888;
+	font-style: italic;
+}
+
+ul.messages span.name {
+	color: #789be0;
+	font-weight: 700;
+}
+
+ul.nav li span {
+	display: inline-block;
+	color: #ab18cd;
+	padding: 10px 15px 10px;
+}
+
+ul.messages form {
+	display: inline;
+}

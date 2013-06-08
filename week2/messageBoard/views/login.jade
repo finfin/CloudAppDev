@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.brand(href='/') Message Board
+  .container
+    h1 LOGIN
+    form(action="/login", method="POST")
+      input(type="text", length="140", name="name", placeholder="請輸入您的ID...")
+      input(type="submit", value="登入")
