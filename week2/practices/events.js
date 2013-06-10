@@ -26,3 +26,4 @@ emitter.on('processing', processing);
 
 emitter.emit('countDown', 10);
 emitter.emit('processing');
+emitter.emit('error');

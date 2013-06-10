@@ -1,15 +1,1 @@
-{
-    "name": "Olivia Ong",
-    "gender": "female",
-    "married": false,
-    "age": 27,
-    "albums": [
-        {
-            "title": "A Girl Meets Bossanova",
-            "releaseDate": "2005/3/24",
-        }, {
-            "title": "Romance",
-            "releaseDate": "2011/7/22"
-        }
-    ]
-}
+{    "name": "Olivia Ong",    "gender": "female","married": false,"age": 27,"albums": [{"title": "A Girl Meets Bossanova","releaseDate": "2005/3/24"}, {"title": "Romance","releaseDate": "2011/7/22"}]}
