@@ -4,4 +4,10 @@ var Person = require('./person');
 var data = require('./data');
 var util = require('./util')
 
-console.log(process.argv);
+var bob = new Person("Bob Dylan", 72);
+
+var p;
+for (i in data) {
+	p = util.toPerson(data[i]);
+	console.log(p.name, p.age);
+}

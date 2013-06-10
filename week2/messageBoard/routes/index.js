@@ -6,10 +6,10 @@ var Message = require('../models/message')
 
 exports.index = function(req, res) {
 	//TODO: 從model取得messages
-	aa
+	
 	res.render('index', {
 		title: 'Message Board',
-		messages: null,
+		messages: Message.messages,
 		user: req.session.user
 	});
 };

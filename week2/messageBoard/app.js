@@ -26,7 +26,6 @@ app.use(app.router);
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-console.log(app.get('env'))
 
 // Routes
 app.get('/', routes.index);
