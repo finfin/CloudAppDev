@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  form(action="/login", method="POST")
+    input(type="text", length="140", name="name")
+    input(type="submit", value="發送")
