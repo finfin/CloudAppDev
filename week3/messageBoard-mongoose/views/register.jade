@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  form(action="/register", method="POST")
+    .control-group
+      label.control-label(for='name') Username
+      .controls
+        input(type="text", length="140", name="name")
+    
+    .control-group
+      label.control-label(for='password') Password
+      .controls
+        input(type="text", length="140", name="password")
+    .control-group
+      label.control-label(for='email') Email
+      .controls
+        input(type="text", length="140", name="email")
+    .control-group
+      label.control-label(for='description') Description
+      .controls
+        input(type="text", length="140", name="description")
+    .control-group
+      .controls
+        input.btn.btn-primary(type="submit", value="註冊")
