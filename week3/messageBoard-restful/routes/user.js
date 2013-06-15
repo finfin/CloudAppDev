@@ -12,23 +12,26 @@ exports.loginView = function(req, res) {
 };
 
 exports.registerView = function(req, res) {
-	// 導至register view
-	// title設定為 "註冊使用者"
+	res.render('register', {
+		title: '註冊使用者'
+	});
 };
 
 exports.login = function(req, res) {
-
-	// 1. User.findOne 找出name=@req.body.name的一筆資料
-	// 2. 利用user.comparePassword比對@req.body.password是否等於此筆資料的password
-	// 3. 相等則重新導向至'/'，並將req.session.user設定為找到的user
-	// 4. 不相等回傳400, "user or password error"
-	User.findOne(/* TODO: queries */, function(err, user) {
+	User.findOne({name: req.body.name}, function(err, user) {
 		if(err) {
 			res.send(400, "user or password error");
 		}
-		user.comparePassword(
-			//TODO: step 3 and 4
-		)
+		user.comparePassword(req.body.password, function(err, isMatch){
+			if(err || !isMatch) {
+				res.send(400, "user or password error");
+				return;
+			}
+
+			req.session.user = user
+			res.redirect('/');
+			return;
+		})
 	});
 	
 };
@@ -39,8 +42,12 @@ exports.logout = function(req, res) {
 }
 
 exports.register = function(req, res) {
-	//使用者欄位： name=@req.body.name, email=@req.body.email, password=@req.body.password, description=@req.body.description
-	User.create(/* TODO: setup user fields */, function(err, user) {
+	User.create({
+		name: req.body.name,
+		email: req.body.email,
+		password: req.body.password,
+		description: req.body.description
+	}, function(err, user) {
 		if (err) {
 			console.log(err);
 			res.send(400, "Invalid data format");

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        a.brand(href='/') Message Board
+      
+        ul.nav
+          if user
+            li 
+              span Hi, #{user.name}
+            li
+              a(href='/mymessage') My Message
+            li
+              a(href='/logout') LOGOUT
+          else
+            li
+              a(href='/login') LOGIN
+                  
+            li
+              a(href='/register') REGISTER
+                  
+  if user
+    form(action="/mymessage", method="POST")
+      input(type="text", length="140", name="text")
+      input(type="submit", value="發送")
+  ul.messages
+    each message in messages
+      li
+        form(action='/messages/#{message._id}', method='POST')
+          input(type="submit", value="remove") 移除
+          input(type="hidden",name="_method", value="delete")
+        span.date= message.date
+        span.name= message.user.name
+        span.text= message.text

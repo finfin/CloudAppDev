@@ -7,51 +7,41 @@ var Message = mongoose.model('Message');
 
 
 exports.index = function(req, res) {
-    //TODO: 從model取得messages
-    Message.find().populate('user', 'name').exec(function(err, messages) {
-        res.render('index', {
-            title: 'Message Board',
-            messages: messages || [],
-            user: req.session.user
-        });
+    // TODO: 資料庫找出messages
+    // 記得讓user.name有值
+    // Hint: Message.find()
+    res.render('index', {
+        title: 'Message Board',
+        messages: messages || [],
+        user: req.session.user
     });
 };
 
 exports.myMessage = function(req, res) {
-    //TODO: 從model取得message, 並以req.session.user篩選使用者
-    Message.findMessageByName(req.session.user.name, function(err, messages){
-        res.render('index', {
-            title: 'My Message Board',
-            messages: messages || [],
-            user: req.session.user
-        });
+    // TODO: 找出collection中user=req.session.user._id的留言
+    // Hint: Message.find(), populate
+    res.render('index', {
+        title: 'My Message Board',
+        messages: mymessages || [],
+        user: req.session.user
     });
-    
 };
 
 exports.createMessage = function(req, res) {
-    Message.create({
-        user: req.session.user._id,
-        text: req.body.text
-    }, function(err, message) {
-        if (err) {
-            console.log(err);
-            res.send(500, "Message creation error");
-            return;
-        }
-        res.redirect(req.get('Referrer'));
-    })
+    // 新增一筆Message, 
+    // user=@req.session.user._id
+    // text=@req.body.text
+    // 成功的話導向req.get('Referrer')
+    // 新增方式可參照routes/user.register
+    var message = new Message(req.session.user, req.body.text);
+    message.save();
+    res.redirect(req.get('Referrer'));
 
 };
 
 exports.removeMessage = function(req, res) {
-    Message.remove({_id: req.params.id}, function(err) {
-        if (err) {
-            console.log(err);
-            res.send(500, "Message operation error");
-            return;
-        }
-        res.redirect(req.get('Referrer'));
-    });
-    
+    // 移除message._id=@req.params.id
+    // 成功的話導向req.get('Referrer')
+    Message.remove(req.params.id);
+    res.redirect(req.get('Referrer'));
 };

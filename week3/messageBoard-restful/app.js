@@ -46,6 +46,8 @@ var message = require('./routes/message');
 var user = require('./routes/user');
 
 // Routes
+// TODO: 1. 把路徑換成restful的樣式
+//       2. 新增user的CRUD路徑
 app.get('/', message.index);
 app.get('/login', user.loginView);
 app.post('/login', user.login);
