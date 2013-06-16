@@ -22,7 +22,7 @@ block content
               a(href='/register') REGISTER
                   
   if user
-    form(action="/mymessage", method="POST")
+    form(action="/message", method="POST")
       input(type="text", length="140", name="text")
       input(type="submit", value="發送")
   ul.messages

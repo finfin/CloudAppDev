@@ -48,20 +48,21 @@ var user = require('./routes/user');
 // Routes
 // TODO: 1. 把路徑換成restful的樣式
 //       2. 新增user的CRUD路徑
-app.get('/', message.index);
 app.get('/login', user.loginView);
 app.post('/login', user.login);
 app.get('/logout', user.logout);
 app.get('/register', user.registerView);
-
+app.post('/register', user.register);
 app.get('/users', user.list);
 app.get('/users/:name', user.detail);
 app.get('/users/:name/edit', user.editView);
 app.put('/users/:name', user.edit);
 app["delete"]('/users/:name', user.remove);
-app.post('/register', user.register);
+
+app.get('/', message.index);
+app.get('/message', message.index);
+app.post('/message', message.createMessage);
 app.get('/mymessage', message.myMessage);
-app.post('/mymessage', message.createMessage);
 app["delete"]('/messages/:id', message.removeMessage);
 
 app.listen(app.get('port'), function() {
