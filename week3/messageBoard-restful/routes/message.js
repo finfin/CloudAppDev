@@ -11,7 +11,7 @@ exports.index = function(req, res) {
     //1. req.query.page換頁 (hint: skip, limit, pageSize設定每頁幾筆資料)
     //2. 判斷是否有req.query.name, 沒有的話執行find() 有的話執行findMessageByName
     if (!req.query.name) {
-        Message.find().populate('user', 'name').exec(function(err, messages) {
+        Message.find().populate('user', 'name').limit(pageSize).skip(pageSize*(req.query.page-1)).exec(function(err, messages) {
             res.render('index', {
                 title: 'Message Board',
                 messages: messages || [],
@@ -19,7 +19,7 @@ exports.index = function(req, res) {
             });
         });
     } else {
-        Message.findMessageByName(req.query.name, function(err, messages) {
+        Message.findMessageByName(req.query.name, pageSize, req.query.page, function(err, messages) {
             res.render('index', {
                 title: 'Message Board: ' + req.query.name,
                 messages: messages || [],
@@ -32,10 +32,11 @@ exports.index = function(req, res) {
 //1. req.query.page換頁
 //2. req.query.name
 exports.myMessage = function(req, res) {
+    var pageSize = 10;
     //TODO: 從model取得message, 並以req.session.user篩選使用者
     Message.find({
         user: req.session.user._id
-    }).populate('user', 'name').exec(function(err, messages) {
+    }).populate('user', 'name').limit(pageSize).skip(pageSize*(req.query.page-1)).exec(function(err, messages) {
         res.render('index', {
             title: 'My Message Board',
             messages: messages || [],

@@ -12,14 +12,14 @@ var messageSchema = new Schema({
 });
 
 
-messageSchema.statics.findMessageByName = function(name, cb) {
+messageSchema.statics.findMessageByName = function(name, pageSize, page, cb) {
     var that = this;
     User.findOne({
         name: name
     }, function(err, user) {
         return that.find({
             user: user._id
-        }).populate('user', 'name').exec(cb);
+        }).populate('user', 'name').limit(pageSize).skip(pageSize*(page-1)).exec(cb);
     })
 }
 
