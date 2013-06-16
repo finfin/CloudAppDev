@@ -11,7 +11,7 @@ p {
   font-size: 1em;
 }
 
-ul, {
+ul {
 	list-style-type: none;
 }
 
@@ -22,6 +22,14 @@ ul span {
 ul span.date {
 	color: #888;
 	font-style: italic;
+}
+
+ul.span.email {
+	width: 30%;
+}
+
+ul span.description {
+	width: 50%;
 }
 
 ul span.name {

@@ -53,6 +53,12 @@ app.get('/login', user.loginView);
 app.post('/login', user.login);
 app.get('/logout', user.logout);
 app.get('/register', user.registerView);
+
+app.get('/users', user.list);
+app.get('/users/:name', user.detail);
+app.get('/users/:name/edit', user.editView);
+app.put('/users/:name', user.edit);
+app["delete"]('/users/:name', user.remove);
 app.post('/register', user.register);
 app.get('/mymessage', message.myMessage);
 app.post('/mymessage', message.createMessage);

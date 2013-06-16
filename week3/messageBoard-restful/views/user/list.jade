@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   .navbar.navbar-inverse.navbar-fixed-top
@@ -28,10 +28,10 @@ block content
   ul.users
     each user in users
       li
-        form(action='/messages/#{message._id}', method='POST')
-          input(type="submit", value="remove") 移除
-          input(type="hidden",name="_method", value="delete")
-        span.name= user.name
+        a(href='/users/#{user.name}/edit')
+          span.name= user.name
         span.email= user.email
         span.description= user.description
-        span.text= message.text
+        form(action='/users/#{user.name}', method='POST')
+          input(type="submit", value="移除") 
+          input(type="hidden",name="_method", value="delete")
