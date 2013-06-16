@@ -6,4 +6,4 @@ function extractDate(string) {
                   Number(found[1]));
 }
 
-console.log(extractDate("born 5/2/2007 (mother Noog): Long-ear Johnson"));
+console.log(extractDate("born 5/8/1981 (mother Noog): Long-ear Johnson"));

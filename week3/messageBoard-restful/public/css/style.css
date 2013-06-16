@@ -11,20 +11,20 @@ p {
   font-size: 1em;
 }
 
-ul.messages {
+ul, {
 	list-style-type: none;
 }
 
-ul.messages span {
+ul span {
 	margin: 0 1em;
 }
 
-ul.messages span.date {
+ul span.date {
 	color: #888;
 	font-style: italic;
 }
 
-ul.messages span.name {
+ul span.name {
 	color: #789be0;
 	font-weight: 700;
 }
@@ -35,6 +35,6 @@ ul.nav li span {
 	padding: 10px 15px 10px;
 }
 
-ul.messages form {
+ul form {
 	display: inline;
 }
