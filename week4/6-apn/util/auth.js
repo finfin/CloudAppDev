@@ -69,12 +69,13 @@ exports.authenticateAPIKey = authenticateAPIKey = function(req, res, next) {
             return res.send(403);
         }
         return req.logIn(user, function(err) {
+            console.log("user:" + user.name + " login")
             if (err) {
                 return next(err);
             }
+            return next();
         });
     })(req, res, next);
-    return next();
 };
 
 exports.ensureAdmin = ensureAdmin = function(req, res, next) {
