@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  form(action="/login", method="POST")
+    .control-group
+      label.control-label(for='username') Username
+      .controls
+        input(type="text",name="username")
+    
+    .control-group
+      label.control-label(for='password') Password
+      .controls
+        input(type="password",name="password")
+    .control-group
+      .controls
+        if message
+          .alert.alert-error 
+            button.close(type="button", data-dismiss="alert") &times;
+            =message
+    .control-group
+      .controls
+        input.btn.btn-primary(type="submit", value="登入")

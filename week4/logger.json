@@ -1,0 +1,33 @@
+{
+    "appenders": [
+        {
+            "type": "smtp",
+            "recipients": "finfin@gmail.com",
+            "subject": "test",
+            "sendInterval": 5,
+            "transport": "SMTP",
+            "SMTP": {
+                "host": "smtp.gmail.com",
+                "secureConnection": true,
+                "port": 465,
+                "auth": {
+                    "user": "finfin@gmail.com",
+                    "pass": "&E(YJKU("
+                },
+                "debug": true
+            },
+            "category": "mailer"
+        }, 
+        {
+            "type": "console"
+        },
+        {
+            
+        }
+    ],
+    "replaceConsole": true,
+    "levels": {
+        "mailer": "FATAL",
+        "[default]": "ERROR"
+    }
+}

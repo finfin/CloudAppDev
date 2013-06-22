@@ -33,9 +33,9 @@ var mongoOptions = {
 
 mongoose.connect(uristring, mongoOptions, function(err, res) {
   if (err) {
-    return console.log("ERROR connecting to: " + uristring + ". " + err);
+    return console.error("ERROR connecting to: " + uristring + ". " + err);
   } else {
-    return console.log("Successfully connected to: " + uristring);
+    return console.info("Successfully connected to: " + uristring);
   }
 });
 

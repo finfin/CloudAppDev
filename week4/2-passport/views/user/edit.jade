@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= editUser.name
+  form(action="/users/#{editUser.name}", method="POST")
+    .control-group
+      label.control-label(for='email') Email
+      .controls
+        input(type="text", length="140", name="email", value="#{editUser.email}")
+    .control-group
+      label.control-label(for='description') Description
+      .controls
+        input(type="text", length="140", name="description", value="#{editUser.description}")
+    .control-group
+      .controls
+        input(type="hidden",name="_method", value="put")
+        input.btn.btn-primary(type="submit", value="修改")
