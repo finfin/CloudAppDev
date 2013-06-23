@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>MessageBoard Confirmation Mail</title>
+	</head>
+	<body>
+		<p>
+			Hi {{name}},
+		</p>
+		<p>
+			非常歡迎您註冊本程式，請點擊以下連結啓動您的帳號：<br/>
+			<a href="http://{{host}}/validate?token={{token}}">http://{{host}}/validate?token={{token}}</a> <br/>
+			或是登入App後輸入您的驗證碼： {{token}}
+		</p>
+		<p>
+			App Team
+		</p>
+		
+	</body>
+</html>

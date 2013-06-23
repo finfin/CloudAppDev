@@ -1,5 +1,4 @@
 .DS_Store
 node_modules/
 messageBoard-mongoose-done/
-messageBoard-week4-done/
 *.log

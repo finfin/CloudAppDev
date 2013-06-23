@@ -50,7 +50,7 @@ block content
         span.text= message.text
         span.date.pull-right= message.date
 block userscript
-  script
+  script.
     $("#typeSelect").on("change", function(e) {
       $this = $(this);
       if ($this.val() === "private")
