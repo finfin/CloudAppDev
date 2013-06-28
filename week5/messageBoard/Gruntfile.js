@@ -13,19 +13,6 @@ module.exports = function(grunt) {
             }
         },
         
-        uglify: {
-            options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-            },
-            build: {
-                expand: true, // Enable dynamic expansion.
-                cwd: 'src/', // Src matches are relative to this path.
-                src: ['**/*.js'], // Actual pattern(s) to match.
-                dest: 'build/', // Destination path prefix.
-                ext: '.js' // Dest filepaths will have this extension.
-            }
-        },
-
         jshint: {
             files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
@@ -37,13 +24,21 @@ module.exports = function(grunt) {
           }
         },
         
-        watch: {
-            files: ['<%= jshint.files %>'],
-            tasks: ['test']
-        },
-        
         clean: {
             build: ["build/"]
+        },
+
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+            },
+            build: {
+                expand: true, // Enable dynamic expansion.
+                cwd: 'src/', // Src matches are relative to this path.
+                src: ['**/*.js'], // Actual pattern(s) to match.
+                dest: 'build/', // Destination path prefix.
+                ext: '.js' // Dest filepaths will have this extension.
+            }
         },
 
         shell: {
@@ -70,6 +65,11 @@ module.exports = function(grunt) {
             }
         },
 
+        watch: {
+            files: ['<%= jshint.files %>'],
+            tasks: ['test']
+        },
+        
         baseDir: '/data/apps/<%=pkg.name%>'
     });
 
@@ -82,8 +82,8 @@ module.exports = function(grunt) {
 
 
     grunt.registerTask('test', ['jshint', 'mochaTest']);
-
-    grunt.registerTask('default', ['jshint', 'mochaTest']);
     grunt.registerTask('build', ['jshint', 'mochaTest', 'clean:build', 'uglify']);
-    grunt.registerTask('deploy', ['jshint', 'mochaTest', 'clean', 'uglify', 'shell:uninstall', 'shell:install']);
+    grunt.registerTask('deploy', ['build', 'shell:uninstall', 'shell:install']);
+    grunt.registerTask('default', ['test']);
+    
 };
