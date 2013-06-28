@@ -31,7 +31,6 @@ exports.notification = function(token, message) {
 	note.alert = message;
 	note.payload = {'messageFrom': 'Caroline'};
 	//note.device = myDevice;
-	console.log(note, device);
 	apnsConnection.pushNotification(note, device);
 };
 

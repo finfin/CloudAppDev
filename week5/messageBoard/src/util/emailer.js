@@ -5,7 +5,6 @@ var config = require("../../config/mailer");
 
 var Emailer = function (options, data) {
     this.options.mailOption = _.extend(config.mailOption, options) || {};
-    console.log(this.options);
     this.data = data || {};
     this.attachments = [];
 };

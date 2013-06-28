@@ -148,10 +148,20 @@ exports.createMessage = function(req, res) {
                 if (user.UUID) {
                     apn.notification(user.UUID, message.text);
                 }
-                res.redirect(req.get('Referrer'));
+                if (req.get('Referrer')) {
+                    res.redirect(req.get('Referrer'));
+                } else {
+                    res.send(200, "created");
+                }
+
             });
-        } else
-            res.redirect(req.get('Referrer'));
+        } else {
+            if (req.get('Referrer')) {
+                res.redirect(req.get('Referrer'));
+            } else {
+                res.send(200, "created");
+            }
+        }
     });
 
 };

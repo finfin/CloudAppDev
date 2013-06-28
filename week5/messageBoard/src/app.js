@@ -81,6 +81,7 @@ app["delete"]('/messages/:id', auth.ensureAuthenticated, message.removeMessage);
 
 //REST API Routes
 app.post('/apiLogin', user.apiLogin);
+app.get('/apiLogin', user.apiLogin);
 app.get('/apiLogout', user.apiLogout);
 app.get('/api/messages', message.list);
 app.post('/api/messages', message.createMessage);
