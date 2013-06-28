@@ -2,8 +2,8 @@
 	"smtpOption": {
 		"service": "Gmail",
 		"auth": {
-			"user": "finfin@gmail.com",
-			"pass": "&E(YJKU("
+			"user": "",
+			"pass": ""
 		}
 	},
 	"mailOption": {
