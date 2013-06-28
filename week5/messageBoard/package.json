@@ -1,0 +1,28 @@
+{
+  "name": "MessageBoard",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "mongoose": "*",
+    "bcrypt": "*",
+    "log4js": "*",
+    "nodemailer": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-localapikey": "git://github.com/finfin/passport-localapikey.git",
+    "underscore": "*",
+    "apn": "*",
+    "chai": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-mocha-test": "~0.5.0",
+    "grunt-shell": "~0.3.0",
+    "grunt-contrib-clean": "~0.4.1"
+  }
+}
