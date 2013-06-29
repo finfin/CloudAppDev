@@ -8,7 +8,7 @@ var workers = {};
 if (cluster.isMaster) {
 	console.log("cores:" + cores);
 	cluster.on('exit', function(worker) {
-		console.log("Worker " + worker.id + " died, respawning".)
+		console.log("Worker " + worker.id + " died, respawning");
 		delete workers[worker.pid];
 		worker = cluster.fork();
 		workers[worker.pid] = worker;
