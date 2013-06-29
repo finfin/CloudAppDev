@@ -1,4 +1,7 @@
 .DS_Store
 node_modules/
 messageBoard-mongoose-done/
+*.log.?
 *.log
+week5/messageBoard/config/mailer.json
+week5/messageBoard/config/log4js.json

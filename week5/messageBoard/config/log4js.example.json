@@ -28,8 +28,8 @@
                     "secureConnection": true,
                     "port": 465,
                     "auth": {
-                        "user": "",
-                        "pass": ""
+                        "user": "user@example.com",
+                        "pass": "password"
                     }
                 }
             }

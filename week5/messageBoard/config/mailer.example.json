@@ -2,8 +2,8 @@
 	"smtpOption": {
 		"service": "Gmail",
 		"auth": {
-			"user": "",
-			"pass": ""
+			"user": "user@example.com",
+			"pass": "password"
 		}
 	},
 	"mailOption": {

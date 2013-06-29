@@ -81,7 +81,7 @@ app["delete"]('/messages/:id', auth.ensureAuthenticated, message.removeMessage);
 
 //REST API Routes
 app.post('/apiLogin', user.apiLogin);
-app.get('/apiLogin', user.apiLogin);
+app.post('/apiLogin', user.apiLogin);
 app.get('/apiLogout', user.apiLogout);
 app.get('/api/messages', message.list);
 app.post('/api/messages', message.createMessage);
@@ -89,6 +89,4 @@ app.get('/api/mymessages', message.myMessage);
 app["delete"]('/api/messages/:id', message.removeMessage);
 app.get('/api/users/:name', auth.ensureSelfOrAdmin, user.detail);
 
-app.listen(app.get('port'), function() {
-  console.log("HTTP Server listening to port: " + app.get('port'));
-});
+module.exports = app;
