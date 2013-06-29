@@ -24,10 +24,7 @@ if (cluster.isMaster) {
 		console.log("Worker " + worker.process.pid + " spawned");
 	}
 } else {
-	var app = require('./app');
-	app.listen(app.get('port'), function() {
-		console.log("HTTP Server listening to port: " + app.get('port'));
-	});
+	require('./app');
 }
 
 process.on('SIGTERM', function() {
