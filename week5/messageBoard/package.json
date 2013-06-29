@@ -12,7 +12,8 @@
     "passport-local": "*",
     "passport-localapikey": "git://github.com/finfin/passport-localapikey.git",
     "underscore": "*",
-    "apn": "*"
+    "apn": "*",
+    "nodetime": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
