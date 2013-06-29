@@ -5,3 +5,4 @@ messageBoard-mongoose-done/
 *.log
 week5/messageBoard/config/mailer.json
 week5/messageBoard/config/log4js.json
+build/

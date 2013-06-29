@@ -1,2 +1,0 @@
-/*! MessageBoard 28-06-2013 */
-var mongoose=require("mongoose"),Schema=mongoose.Schema,User=require("./user"),messageSchema=new Schema({user:String,text:String,date:{type:Date,"default":Date.now},type:{type:String,trim:!0,"enum":["public","private"]},target:String});module.exports=mongoose.model("Message",messageSchema);
