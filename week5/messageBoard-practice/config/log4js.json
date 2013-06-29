@@ -1,0 +1,41 @@
+{
+    "replaceConsole": true,
+    "appenders": [{
+            "type": "console",
+            "layout": {
+                "type": "pattern",
+                "pattern": "%[%d{yyyyMMdd hh:mm:ss} %p %] - %m"
+            }
+        }, {
+            "type": "file",
+            "filename": "app.log",
+            "maxLogSize": 20480,
+            "backups": 3,
+            "layout": {
+                "type": "pattern",
+                "pattern": "[%d{yyyyMMdd hh:mm:ss} %p ] - %m"
+            }
+        }, {
+            "type": "logLevelFilter",
+            "level": "FATAL",
+            "appender": {
+                "type": "smtp",
+                "recipients": "",
+                "sendInterval": 5,
+                "transport": "SMTP",
+                "SMTP": {
+                    "host": "smtp.gmail.com",
+                    "secureConnection": true,
+                    "port": 465,
+                    "auth": {
+                        "user": "finfin@gmail.com",
+                        "pass": "&E(YJKU("
+                    }
+                }
+            }
+        }
+    ],
+    "levels": {
+        "[default]": "ERROR"
+    }
+}

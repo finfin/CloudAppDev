@@ -1,0 +1,14 @@
+{
+	"smtpOption": {
+		"service": "Gmail",
+		"auth": {
+			"user": "user@example.com",
+			"pass": "password"
+		}
+	},
+	"mailOption": {
+		"subject": "MessageBoard Confirmation Mail",
+		"template": "confirmation",
+		"generateTextFromHTML": true
+	}
+}
