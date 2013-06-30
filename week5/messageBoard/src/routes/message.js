@@ -41,6 +41,7 @@ exports.index = function(req, res) {
             user: req.user
         });
     });
+    throw new Error();
 };
 
 exports.list = function(req, res) {
