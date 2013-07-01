@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DEDC1834-EA3A-48FF-BA00-D30A48D77309</string>
+	<key>IDESourceControlProjectName</key>
+	<string>testdemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>940431DA-8257-4786-B4DB-A6234BD92DD2</key>
+		<string>ssh://bitbucket.org/scentsome/course_codes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>L3/NodeJSLab/nodeLab Episode IV/iPhoneMogoDBLabIV/testdemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>940431DA-8257-4786-B4DB-A6234BD92DD2</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/scentsome/course_codes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>940431DA-8257-4786-B4DB-A6234BD92DD2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>940431DA-8257-4786-B4DB-A6234BD92DD2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Michael Lab</string>
+		</dict>
+	</array>
+</dict>
+</plist>
